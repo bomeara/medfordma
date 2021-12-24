@@ -1,0 +1,12 @@
+name: "Medford MA Unofficial Covid Info"
+navbar:
+  title: "Medford MA Unofficial Covid Info"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "hospitalization"
+      href: individualhospitals.html
+    - text: "About"
+      href: about.html
+
+output_dir: "docs"

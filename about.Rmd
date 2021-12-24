@@ -1,0 +1,25 @@
+---
+title: About
+output:
+  html_document:
+    includes:
+       in_header: GA_Script.html
+---
+
+I am Brian O'Meara, a resident of Oak Ridge, TN; I grew up in Medford, MA, and have family there who wanted plots of covid info over time. You can see all the code used to make this site at https://github.com/bomeara/medfordma. Note that while I work in science, I am not an expert in epidemiology; this is just a compilation of others' data. Talk to your healthcare provider for making health decisions.
+
+Some of the data sources:
+
+* [Medford, MA, covid case counts](https://www.medfordma.org/covid-19-total-case-counts/)
+* [US Health and Human Services](https://healthdata.gov)
+* [State of Massachusetts covid data](https://www.mass.gov/info-details/archive-of-covid-19-cases-in-massachusetts)
+
+Go to those sources for official information; this site just processes their data in ways to make it accessible to my family and perhaps others.
+
+Some of the tools used:
+
+* [R](https://www.r-project.org/) along with [many R packages](https://github.com/bomeara/EastTN/blob/main/_packages.R)
+* [github](https://github.com) for hosting
+* [wget](https://www.gnu.org/software/wget/) and [curl](https://curl.haxx.se/) for downloading data
+
+Remember we are still in a pandemic. **Get vaccinated to keep others and yourself safe: https://www.vaccines.gov/ to find vaccines**.

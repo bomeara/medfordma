@@ -1,0 +1,37 @@
+---
+title: East TN information
+output:
+  html_document:
+    includes:
+       in_header: GA_Script.html
+params:
+  sumtab: "unknown"
+---
+
+The purpose of this is to gather information on how the covid-19 pandemic is progressing in Medford, MA. It is **not** an official site; please go to https://www.medfordma.org/coronavirus-information/ for official information.
+
+I am mostly doing this for the convenience of my family who live in Medford -- they wanted to see plots of things like positivity rate over time. 
+
+Please keep my family, and yours, and yourself safe by following public health guidelines. Find a vaccine at https://vaxfinder.mass.gov/ and go [here](https://www.medfordma.org/coronavirus-information/) for info on boosters, masking, and more.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("_packages.R")
+source("R/functions.R")
+tar_load(medford_from_state)
+tar_load(medford_from_city)
+```
+
+Positivity rates (what percent of tests show covid; if this is high, it could indicate that many other cases are being missed).
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}	
+plot_positivity <- ggplot(medford_from_state, aes(x=End_Date, y=Percent_Positivity)) + geom_line()+ theme_light() + xlab("Date") + ylab("Positivity rate of tests for the week ending this date")
+print(plot_positivity)
+```
+
+New covid cases per day in Medford
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}	
+plot_cases <- ggplot(medford_from_city, aes(x=DATE, y=`New Cases`)) + geom_line()+ theme_light() + xlab("Date") + ylab("Number of new cases per day")
+print(plot_cases)
+```
