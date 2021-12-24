@@ -168,16 +168,14 @@ CreateHHSDataFocalCitiesPretty <- function(hhs_capacity_ma_focal) {
     hhs_capacity_ma_focal_latest_pretty <- hhs_capacity_ma_focal_latest[,c(
         "hospital_name", 
         "number_unoccupied_adult_hospital_ICU_beds", 
-        "percentage_adult_hospital_inpatient_ICU_bed_unoccupied_of_all_inpatient_ICU_beds",
-		"number_unoccupied_adult_hospital_inpatient_beds", 
-        "percentage_adult_hospital_inpatient_bed_unoccupied_of_all_inpatient_beds" 
+		"total_staffed_adult_icu_beds_7_day_avg",
+        "percentage_adult_hospital_inpatient_ICU_bed_unoccupied_of_all_inpatient_ICU_beds" 
     )]
     colnames(hhs_capacity_ma_focal_latest_pretty) <- c(
         "Hospital", 
-        "Adult ICU number avail", 
-        "Adult ICU % avail",
-        "Adult beds number avail", 
-        "Adult beds % avail"
+        "ICU beds available",
+		"ICU beds total" ,
+        "Percent available"
     )
 
     for (i in 2:ncol(hhs_capacity_ma_focal_latest_pretty)) {

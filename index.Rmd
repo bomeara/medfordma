@@ -43,7 +43,7 @@ print(plot_cases)
 ### Hospital data
 
 
-The US Department of Health and Human Services gives data on hospital usage. Here are data for hospitals in this area with at least 25 ICU beds.
+The US Department of Health and Human Services gives data on hospital usage. Here are data of adult ICU bed availability for hospitals in this area with at least 25 staffed adult ICU beds.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::kable(hhs_capacity_ma_focal_latest_pretty)
