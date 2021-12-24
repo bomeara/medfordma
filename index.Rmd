@@ -29,7 +29,7 @@ tar_load(state_hospital_data)
 Positivity rates (what percent of tests show covid; if this is high, it could indicate that many other cases are being missed).
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}	
-plot_positivity <- ggplot(medford_from_state, aes(x=End_Date, y=Percent_Positivity)) + geom_line()+ theme_light() + xlab("Date") + ylab("Positivity rate of tests for the week ending this date") + ggtitle("Positivity rate in Medford")
+plot_positivity <- ggplot(medford_from_state, aes(x=End_Date, y=Percent_Positivity)) + geom_line()+ theme_light() + xlab("Date") + ylab("Percent of positive tests for the week ending this date") + ggtitle("Positivity rate in Medford")
 print(plot_positivity)
 ```
 
