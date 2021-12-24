@@ -24,6 +24,7 @@ list(
   tar_target(hhs_capacity_ma, CreateHHSData()),
   tar_target(hhs_capacity_ma_focal, CreateHHSDataFocalCities(hhs_capacity_ma)),
   tar_target(hhs_capacity_ma_focal_latest_pretty, CreateHHSDataFocalCitiesPretty(hhs_capacity_ma_focal)),
-  tar_target(tsa_throughput, GetTSAThroughput())
+  tar_target(tsa_throughput, GetTSAThroughput()),
+  tar_target(state_hospital_data, GetHospitalDataFromState())
  # tar_target(bosflights, GetBOSFlights())
 )

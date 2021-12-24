@@ -1,12 +1,12 @@
 GetDataFromState <- function() {
-	page <- readLines("https://www.mass.gov/info-details/archive-of-covid-19-cases-in-massachusetts#december-2021-")
+	page <- readLines("https://www.mass.gov/info-details/archive-of-covid-19-cases-in-massachusetts")
 	focal_line <- page[grepl("/doc/covid-19-raw-data",page)][1]
 	url <- paste0("https://www.mass.gov",gsub('.{1}$', "", gsub('href=\"',"",stringr::str_extract(focal_line, pattern="href=[^>]*"))))
 	
 	temp = tempfile(fileext = ".xlsx")
  	download.file(url, destfile=temp, mode='wb')
 
-    state_data <- readxl::read_xlsx(temp, sheet=26)
+    state_data <- readxl::read_xlsx(temp, sheet=26) #watch for sheet number updating
 	medford_data <- subset(state_data, `City/Town`=="Medford")
 	medford_data$Start_Date <- as.Date(medford_data$Start_Date)
 	medford_data$End_Date <- as.Date(medford_data$End_Date)
@@ -14,6 +14,20 @@ GetDataFromState <- function() {
 	medford_data$Percent_Positivity <- 100*as.numeric(gsub('%', "", medford_data$`Percent Positivity`))
 	medford_data$Daily_Rate_Per_100K_Residents <- as.numeric(medford_data$`Average Daily Rate`)
 	return(medford_data)
+}
+
+GetHospitalDataFromState <- function() {
+	page <- readLines("https://www.mass.gov/info-details/archive-of-covid-19-cases-in-massachusetts")
+	focal_line <- page[grepl("/doc/covid-19-raw-data",page)][1]
+	url <- paste0("https://www.mass.gov",gsub('.{1}$', "", gsub('href=\"',"",stringr::str_extract(focal_line, pattern="href=[^>]*"))))
+	
+	temp = tempfile(fileext = ".xlsx")
+ 	download.file(url, destfile=temp, mode='wb')
+
+    state_hospital_data <- readxl::read_xlsx(temp, sheet="Hospitalization from Hospitals")
+	state_hospital_data$Percentage_Hospitalized_Who_Were_Vaccinated <- 100*state_hospital_data$`Vaccinated COVID Hospitalizations`/state_hospital_data$`Total number of COVID patients in hospital today`
+	
+	return(state_hospital_data)
 }
 
 GetDataFromCity <- function() {
