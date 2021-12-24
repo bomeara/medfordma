@@ -114,7 +114,7 @@ CreateHHSDataFocalCities <- function(hhs_capacity_ma) {
 
     #hhs_capacity_ma_focal <- subset(hhs_capacity_ma_focal, all_adult_hospital_inpatient_beds_7_day_avg>=100)
 
-    few_update_hospitals <- names(which(table(hhs_capacity_ma_focal$hospital_name)<=2))
+    few_update_hospitals <- names(which(table(hhs_capacity_ma_focal$hospital_name)<=20))
 
     if(length(few_update_hospitals)>0) {
         hhs_capacity_ma_focal <- subset(hhs_capacity_ma_focal, !(hospital_name %in% few_update_hospitals)) #deleting the tiny hospitals that don't update
