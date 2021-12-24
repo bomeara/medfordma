@@ -28,7 +28,7 @@ GetDataFromCity <- function() {
 		}
 	}
 	tbl <- tbl[!grepl('\\*', tbl[,1]),]
-	tbl$Date <- as.Date(tbl$Date, format="%m-%d-%Y")
+	tbl$DATE <- as.Date(tbl$DATE, format="%m-%d-%Y")
 	tbl$`TOTAL CASES TO DATE` <- as.numeric(gsub(',', "", tbl$`TOTAL CASES TO DATE`))
 	return(tbl)
 }
