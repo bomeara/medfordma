@@ -83,6 +83,6 @@ We can also see what percentage of people who have been hospitalized for covid h
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-covid_patients_vaxxed_plot <- ggplot(state_hospital_data, aes(x=Date, y=Percentage_Hospitalized_Who_Were_Vaccinated)) + geom_line() + theme_light() + ylab("Percentage of people hospitalized for covid who were fully vaccinated first") +  xlab("Date") + ggtitle("Percentage of hospitalized covid patients who were fully vaccinated in MA")
+covid_patients_vaxxed_plot <- ggplot(state_hospital_data[!is.na(state_hospital_data$Percentage_Hospitalized_Who_Were_Vaccinated),], aes(x=Date, y=Percentage_Hospitalized_Who_Were_Vaccinated)) + geom_line() + theme_light() + ylab("Percentage of people hospitalized for covid who were fully vaccinated first") +  xlab("Date") + ggtitle("Percentage of hospitalized covid patients who were fully vaccinated in MA")
 print(covid_patients_vaxxed_plot)
 ```
