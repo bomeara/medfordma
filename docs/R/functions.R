@@ -122,7 +122,8 @@ CreateHHSDataFocalCities <- function(hhs_capacity_ma) {
 
     hhs_capacity_ma_focal$hospital_name <- gsub("TENNOVA HEALTHCARE", "TENNOVA", hhs_capacity_ma_focal$hospital_name )
     hhs_capacity_ma_focal$hospital_name <- stringr::str_to_title(hhs_capacity_ma_focal$hospital_name)
-   # hhs_capacity_ma_focal$hospital_name[grepl("University Of Tn", hhs_capacity_ma_focal$hospital_name, ignore.case=TRUE)] <- "University of TN Medical Center"
+	hhs_capacity_ma_focal$hospital_name <- gsub("Melrosewakefield", "Melrose-Wakefield", hhs_capacity_ma_focal$hospital_name )
+    #hhs_capacity_ma_focal$hospital_name[grepl("University Of Tn", hhs_capacity_ma_focal$hospital_name, ignore.case=TRUE)] <- "University of TN Medical Center"
 
 
 
