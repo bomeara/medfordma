@@ -4,8 +4,6 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Hospitalization"
-      href: individualhospitals.html
     - text: "About"
       href: about.html
 
