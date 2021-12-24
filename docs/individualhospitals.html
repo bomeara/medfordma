@@ -11,7 +11,7 @@
 
 
 
-<title>individualhospitals.knit</title>
+<title>Individual Hospitals</title>
 
 <script src="site_libs/header-attrs-2.11.3/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -32,6 +32,17 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHSZ84W9K5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EHSZ84W9K5');
+</script>
+
+
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -245,7 +256,7 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="individualhospitals.html">hospitalization</a>
+  <a href="individualhospitals.html">Hospitalization</a>
 </li>
 <li>
   <a href="about.html">About</a>
@@ -262,11 +273,142 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Individual Hospitals</h1>
 
 </div>
 
 
-
+<p>The US Department of Health and Human Services gives data on hospital usage. Here are data for hospitals in this area.</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="6%" />
+<col width="9%" />
+<col width="13%" />
+<col width="11%" />
+<col width="9%" />
+<col width="13%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Hospital</th>
+<th align="left">City</th>
+<th align="right">Adult beds total</th>
+<th align="right">Adult beds number avail</th>
+<th align="right">Adult beds % avail</th>
+<th align="right">Adult ICU total</th>
+<th align="right">Adult ICU number avail</th>
+<th align="right">Adult ICU % avail</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Massachusetts General Hospital</td>
+<td align="left">Boston</td>
+<td align="right">913</td>
+<td align="right">37</td>
+<td align="right">4</td>
+<td align="right">119</td>
+<td align="right">2</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">Brigham And Women’s Hospital</td>
+<td align="left">Boston</td>
+<td align="right">808</td>
+<td align="right">29</td>
+<td align="right">4</td>
+<td align="right">100</td>
+<td align="right">7</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="left">Beth Israel Deaconess Medical Center</td>
+<td align="left">Boston</td>
+<td align="right">717</td>
+<td align="right">23</td>
+<td align="right">3</td>
+<td align="right">78</td>
+<td align="right">4</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">Boston Medical Center Corporation-</td>
+<td align="left">Boston</td>
+<td align="right">442</td>
+<td align="right">60</td>
+<td align="right">14</td>
+<td align="right">63</td>
+<td align="right">10</td>
+<td align="right">16</td>
+</tr>
+<tr class="odd">
+<td align="left">Lahey Hospital &amp; Medical Center, Burlington</td>
+<td align="left">Burlington</td>
+<td align="right">341</td>
+<td align="right">11</td>
+<td align="right">3</td>
+<td align="right">58</td>
+<td align="right">10</td>
+<td align="right">17</td>
+</tr>
+<tr class="even">
+<td align="left">Tufts Medical Center</td>
+<td align="left">Boston</td>
+<td align="right">330</td>
+<td align="right">75</td>
+<td align="right">23</td>
+<td align="right">65</td>
+<td align="right">17</td>
+<td align="right">26</td>
+</tr>
+<tr class="odd">
+<td align="left">North Shore Medical Center -</td>
+<td align="left">Salem</td>
+<td align="right">293</td>
+<td align="right">14</td>
+<td align="right">5</td>
+<td align="right">19</td>
+<td align="right">1</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">Cambridge Health Alliance</td>
+<td align="left">Cambridge</td>
+<td align="right">188</td>
+<td align="right">23</td>
+<td align="right">12</td>
+<td align="right">12</td>
+<td align="right">3</td>
+<td align="right">22</td>
+</tr>
+<tr class="odd">
+<td align="left">Melrosewakefield Healthcare</td>
+<td align="left">Melrose</td>
+<td align="right">150</td>
+<td align="right">11</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="right">1</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="left">New England Baptist Hospital</td>
+<td align="left">Boston</td>
+<td align="right">65</td>
+<td align="right">4</td>
+<td align="right">7</td>
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p>Plotting percentage of ICU patients with covid over time. Some hospitals have much more frequently updated data than others.</p>
+<p><img src="individualhospitals_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Plotting ICU bed availability over time.</p>
+<p><img src="individualhospitals_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 
 
 

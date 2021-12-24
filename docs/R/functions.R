@@ -30,20 +30,10 @@ GetDataFromCity <- function() {
 	tbl <- tbl[!grepl('\\*', tbl[,1]),]
 	tbl$DATE <- as.Date(tbl$DATE, format="%m-%d-%Y")
 	tbl$`TOTAL CASES TO DATE` <- as.numeric(gsub(',', "", tbl$`TOTAL CASES TO DATE`))
+	tbl$`New Cases` <- as.numeric(gsub(',', "", tbl$`New Cases`))
+
 	return(tbl)
 }
-
-
-
-
-FocalCountiesHospitalKnoxArea <- function() {
-    return(c("Knox", "Anderson", "Roane", "Scott", "Blount", "Claiborne", "Jefferson", "Campbell", "Sevier", "Loudon", "Hamblen", "Cocke", "Monroe", "McMinn"))
-}
-
-FocalCountiesEastTN <- function() {
-    return(c("Anderson", "Bledsoe", "Blount", "Bradley", "Campbell", "Carter", "Claiborne", "Cocke", "Cumberland", "Grainger", "Greene", "Hamblen", "Hamilton", "Hancock", "Hawkins", "Jefferson", "Johnson", "Knox", "Loudon", "Marion", "McMinn", "Meigs", "Monroe", "Morgan", "Polk", "Rhea", "Roane", "Scott", "Sevier", "Sullivan", "Unicoi", "Union", "Washington"))
-}
-
 
 
 
