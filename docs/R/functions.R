@@ -136,7 +136,9 @@ CreateHHSDataFocalCities <- function(hhs_capacity_ma) {
 
     hhs_capacity_ma_focal$hospital_name <- gsub("TENNOVA HEALTHCARE", "TENNOVA", hhs_capacity_ma_focal$hospital_name )
     hhs_capacity_ma_focal$hospital_name <- stringr::str_to_title(hhs_capacity_ma_focal$hospital_name)
-	hhs_capacity_ma_focal$hospital_name <- gsub("Melrosewakefield", "Melrose-Wakefield", hhs_capacity_ma_focal$hospital_name )
+	hhs_capacity_ma_focal$hospital_name <- gsub("Melrosewakefield", "Melrose Wakefield", hhs_capacity_ma_focal$hospital_name )
+	hhs_capacity_ma_focal$hospital_name <- gsub("-", "", hhs_capacity_ma_focal$hospital_name )
+
     #hhs_capacity_ma_focal$hospital_name[grepl("University Of Tn", hhs_capacity_ma_focal$hospital_name, ignore.case=TRUE)] <- "University of TN Medical Center"
 
 
@@ -161,25 +163,20 @@ CreateHHSDataFocalCitiesPretty <- function(hhs_capacity_ma_focal) {
 	
     hhs_capacity_ma_focal_latest <- subset(hhs_capacity_ma_focal, DATE==max(DATE))
     hhs_capacity_ma_focal_latest <- hhs_capacity_ma_focal_latest[order(hhs_capacity_ma_focal_latest$all_adult_hospital_inpatient_beds_7_day_avg, decreasing=TRUE),]
+	hhs_capacity_ma_focal_latest <- subset(hhs_capacity_ma_focal_latest, number_unoccupied_adult_hospital_ICU_beds>=25)
     hhs_capacity_ma_focal_latest_pretty <- hhs_capacity_ma_focal_latest[,c(
         "hospital_name", 
-        "city", 
-        "all_adult_hospital_inpatient_beds_7_day_avg", 
-        "number_unoccupied_adult_hospital_inpatient_beds", 
-        "percentage_adult_hospital_inpatient_bed_unoccupied_of_all_inpatient_beds", 
-        "total_staffed_adult_icu_beds_7_day_avg", 
         "number_unoccupied_adult_hospital_ICU_beds", 
-        "percentage_adult_hospital_inpatient_ICU_bed_unoccupied_of_all_inpatient_ICU_beds"
+        "percentage_adult_hospital_inpatient_ICU_bed_unoccupied_of_all_inpatient_ICU_beds",
+		"number_unoccupied_adult_hospital_inpatient_beds", 
+        "percentage_adult_hospital_inpatient_bed_unoccupied_of_all_inpatient_beds" 
     )]
     colnames(hhs_capacity_ma_focal_latest_pretty) <- c(
         "Hospital", 
-        "City", 
-        "Adult beds total", 
-        "Adult beds number avail", 
-        "Adult beds % avail", 
-        "Adult ICU total", 
         "Adult ICU number avail", 
-        "Adult ICU % avail"
+        "Adult ICU % avail",
+        "Adult beds number avail", 
+        "Adult beds % avail"
     )
 
     for (i in 3:ncol(hhs_capacity_ma_focal_latest_pretty)) {
