@@ -6,5 +6,7 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Flight info"
+      href: flight.html
 
 output_dir: "docs"
