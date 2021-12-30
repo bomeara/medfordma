@@ -19,5 +19,5 @@ page <- remDr$getPageSource()
 # convert to xml for easier parsing
 page_xml <- read_html(page[[1]])
 table <- html_table(page_xml %>% html_elements("table"))[[1]]
-write.csv(table, file=paste0("/Users/bomeara/Dropbox/NashvilleFlights/Nashville_Flight", format(Sys.time(), "%Y-%m-%d_%H_%M_%S"), ".csv"))
+try(write.csv(table, file=paste0("/Users/bomeara/Dropbox/Nashville_Flight", format(Sys.time(), "%Y-%m-%d_%H_%M_%S"), ".csv")))
 remDr$close()
