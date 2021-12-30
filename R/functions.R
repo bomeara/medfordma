@@ -94,6 +94,11 @@ CreateHHSData <- function() {
     hhs_capacity_ma$percentage_adult_hospital_inpatient_ICU_bed_unoccupied_of_all_inpatient_ICU_beds <- 100 - hhs_capacity_ma$percentage_adult_hospital_inpatient_ICU_bed_occupied_of_all_inpatient_ICU_beds
 
     hhs_capacity_ma$number_unoccupied_adult_hospital_ICU_beds <- hhs_capacity_ma$total_staffed_adult_icu_beds_7_day_avg - hhs_capacity_ma$staffed_adult_icu_bed_occupancy_7_day_avg
+
+	hhs_capacity_ma$percentage_all_ICU_bed_occupied <- 100*hhs_capacity_ma$icu_beds_used_7_day_avg/hhs_capacity_ma$total_icu_beds_7_day_avg
+	
+	hhs_capacity_ma$number_unoccupied_ICU_beds <- hhs_capacity_ma$total_icu_beds_7_day_avg - hhs_capacity_ma$icu_beds_used_7_day_avg
+
     return(hhs_capacity_ma)
 }
 
@@ -165,11 +170,20 @@ CreateHHSDataFocalCitiesPretty <- function(hhs_capacity_ma_focal) {
     hhs_capacity_ma_focal_latest <- hhs_capacity_ma_focal_latest[order(hhs_capacity_ma_focal_latest$all_adult_hospital_inpatient_beds_7_day_avg, decreasing=TRUE),]
 	hhs_capacity_ma_focal_latest$total_staffed_adult_icu_beds_7_day_avg <- as.numeric(hhs_capacity_ma_focal_latest$total_staffed_adult_icu_beds_7_day_avg)
 	hhs_capacity_ma_focal_latest <- subset(hhs_capacity_ma_focal_latest, total_staffed_adult_icu_beds_7_day_avg>=25)
-    hhs_capacity_ma_focal_latest_pretty <- hhs_capacity_ma_focal_latest[,c(
+    # hhs_capacity_ma_focal_latest_pretty <- hhs_capacity_ma_focal_latest[,c(
+    #     "hospital_name", 
+    #     "number_unoccupied_adult_hospital_ICU_beds", 
+	# 	"total_staffed_adult_icu_beds_7_day_avg",
+    #     "percentage_adult_hospital_inpatient_ICU_bed_unoccupied_of_all_inpatient_ICU_beds" 
+    # )]
+	
+	
+
+	hhs_capacity_ma_focal_latest_pretty <- hhs_capacity_ma_focal_latest[,c(
         "hospital_name", 
-        "number_unoccupied_adult_hospital_ICU_beds", 
-		"total_staffed_adult_icu_beds_7_day_avg",
-        "percentage_adult_hospital_inpatient_ICU_bed_unoccupied_of_all_inpatient_ICU_beds" 
+        "number_unoccupied_ICU_beds", 
+		"total_icu_beds_7_day_avg",
+        "percentage_all_ICU_bed_occupied" 
     )]
     colnames(hhs_capacity_ma_focal_latest_pretty) <- c(
         "Hospital", 

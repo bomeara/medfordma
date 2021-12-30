@@ -43,14 +43,14 @@ print(plot_cases)
 ### Hospital data
 
 
-The US Department of Health and Human Services gives data on hospital usage. Here are data of adult ICU bed availability for hospitals in this area with at least 25 staffed adult ICU beds.
+The US Department of Health and Human Services gives data on hospital usage. Here are data of ICU bed availability for hospitals in this area with at least 25 staffed ICU beds.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::kable(hhs_capacity_ma_focal_latest_pretty)
 ```
 
 
-Plotting percentage of ICU patients with covid over time. Some hospitals have much more frequently updated data than others; some is fairly gappy. This just plots the hospitals that average at least 25 staffed ICU beds per week.
+Plotting percentage of ICU patients with covid over time. Some hospitals have much more frequently updated data than others; some is fairly gappy. This just plots the hospitals that average at least 25 staffed adult ICU beds per week.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 major_hospitals <- subset(hhs_capacity_ma_focal, total_icu_beds_7_day_avg>=25)
