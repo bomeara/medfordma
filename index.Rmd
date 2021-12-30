@@ -33,10 +33,10 @@ plot_positivity <- ggplot(medford_from_state, aes(x=End_Date, y=Percent_Positivi
 print(plot_positivity)
 ```
 
-New covid cases per day in Medford
+New covid cases per day in Medford (seven day average in red)
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}	
-plot_cases <- ggplot(medford_from_city, aes(x=DATE, y=`New Cases`)) + geom_line()+ theme_light() + xlab("Date") + ylab("Number of new cases per day") + ggtitle("New covid cases in Medford per day")
+plot_cases <- ggplot(medford_from_city, aes(x=DATE, y=`New Cases`)) + geom_line() + geom_ma(n=7, color="red", linetype="solid")+ theme_light() + xlab("Date") + ylab("Number of new cases per day") + ggtitle("New covid cases in Medford per day")
 print(plot_cases)
 ```
 
