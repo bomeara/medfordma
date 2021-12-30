@@ -108,28 +108,28 @@ CreateHHSDataFocalCities <- function(hhs_capacity_ma) {
     focal_cities <- toupper(c("Boston", "Burlington", "Medford", "Melrose", "Winchester", "Cambridge", "Salem"))
     hhs_capacity_ma_focal <- hhs_capacity_ma[hhs_capacity_ma$city%in%focal_cities,]
 
-    hhs_capacity_ma_focal <- subset(hhs_capacity_ma_focal, 
-        !is.na(all_adult_hospital_inpatient_bed_occupied_7_day_avg) & 
-        !is.na(total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg) & 
-        !is.na(all_adult_hospital_inpatient_beds_7_day_avg) &
-        !is.na(total_staffed_adult_icu_beds_7_day_avg) &
-        !is.na(staffed_adult_icu_bed_occupancy_7_day_avg) &
-        !is.na(staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_avg) & 
-        !is.na(percentage_adult_hospital_inpatient_bed_occupied_covid_confirmed_or_suspected_7_day_avg_of_all_occupied) &
-        !is.na(percentage_adult_hospital_inpatient_bed_occupied_of_all_inpatient_beds) &
-        !is.na(percentage_adult_hospital_ICU_bed_occupied_covid_confirmed_or_suspected_7_day_avg_of_all_ICU_occupied) &
-        !is.na(percentage_adult_hospital_inpatient_ICU_bed_occupied_of_all_inpatient_ICU_beds)
-    )
+    # hhs_capacity_ma_focal <- subset(hhs_capacity_ma_focal, 
+    #     !is.na(all_adult_hospital_inpatient_bed_occupied_7_day_avg) & 
+    #     !is.na(total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg) & 
+    #     !is.na(all_adult_hospital_inpatient_beds_7_day_avg) &
+    #     !is.na(total_staffed_adult_icu_beds_7_day_avg) &
+    #     !is.na(staffed_adult_icu_bed_occupancy_7_day_avg) &
+    #     !is.na(staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_avg) & 
+    #     !is.na(percentage_adult_hospital_inpatient_bed_occupied_covid_confirmed_or_suspected_7_day_avg_of_all_occupied) &
+    #     !is.na(percentage_adult_hospital_inpatient_bed_occupied_of_all_inpatient_beds) &
+    #     !is.na(percentage_adult_hospital_ICU_bed_occupied_covid_confirmed_or_suspected_7_day_avg_of_all_ICU_occupied) &
+    #     !is.na(percentage_adult_hospital_inpatient_ICU_bed_occupied_of_all_inpatient_ICU_beds)
+    # )
 
 
-    hhs_capacity_ma_focal <- subset(hhs_capacity_ma_focal, 
-        (all_adult_hospital_inpatient_bed_occupied_7_day_avg >= 0) & 
-        (total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg >= 0) & 
-        (all_adult_hospital_inpatient_beds_7_day_avg >= 0) &
-        (total_staffed_adult_icu_beds_7_day_avg >= 0) &
-        (staffed_adult_icu_bed_occupancy_7_day_avg >= 0) &
-        (staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_avg >= 0)
-    )
+    # hhs_capacity_ma_focal <- subset(hhs_capacity_ma_focal, 
+    #     (all_adult_hospital_inpatient_bed_occupied_7_day_avg >= 0) & 
+    #     (total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg >= 0) & 
+    #     (all_adult_hospital_inpatient_beds_7_day_avg >= 0) &
+    #     (total_staffed_adult_icu_beds_7_day_avg >= 0) &
+    #     (staffed_adult_icu_bed_occupancy_7_day_avg >= 0) &
+    #     (staffed_icu_adult_patients_confirmed_and_suspected_covid_7_day_avg >= 0)
+    # )
 
     #hhs_capacity_ma_focal <- subset(hhs_capacity_ma_focal, all_adult_hospital_inpatient_beds_7_day_avg>=100)
 
