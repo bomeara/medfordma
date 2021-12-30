@@ -36,7 +36,7 @@ print(plot_positivity)
 New covid cases per day in Medford (seven day average in red)
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}	
-plot_cases <- ggplot(medford_from_city, aes(x=DATE, y=`New Cases`)) + geom_line() + geom_ma(n=7, color="red", linetype="solid")+ theme_light() + xlab("Date") + ylab("Number of new cases per day") + ggtitle("New covid cases in Medford per day")
+plot_cases <- ggplot(medford_from_city, aes(x=DATE, y=`New Cases`)) + geom_line(color="darkgray") + geom_line(aes(y=zoo::rollmean(`New Cases`, 7, na.pad=TRUE, align="right")), color="red")+ theme_light() + xlab("Date") + ylab("Number of new cases per day") + ggtitle("New covid cases in Medford per day")
 print(plot_cases)
 ```
 
