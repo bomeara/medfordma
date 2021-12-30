@@ -167,9 +167,9 @@ CreateHHSDataFocalCities <- function(hhs_capacity_ma) {
 CreateHHSDataFocalCitiesPretty <- function(hhs_capacity_ma_focal) {
 	
     hhs_capacity_ma_focal_latest <- subset(hhs_capacity_ma_focal, DATE==max(DATE))
-    hhs_capacity_ma_focal_latest <- hhs_capacity_ma_focal_latest[order(hhs_capacity_ma_focal_latest$all_adult_hospital_inpatient_beds_7_day_avg, decreasing=TRUE),]
-	hhs_capacity_ma_focal_latest$total_staffed_adult_icu_beds_7_day_avg <- as.numeric(hhs_capacity_ma_focal_latest$total_staffed_adult_icu_beds_7_day_avg)
-	hhs_capacity_ma_focal_latest <- subset(hhs_capacity_ma_focal_latest, total_staffed_adult_icu_beds_7_day_avg>=25)
+    hhs_capacity_ma_focal_latest <- hhs_capacity_ma_focal_latest[order(hhs_capacity_ma_focal_latest$total_icu_beds_7_day_avg, decreasing=TRUE),]
+	hhs_capacity_ma_focal_latest$total_icu_beds_7_day_avg <- as.numeric(hhs_capacity_ma_focal_latest$total_icu_beds_7_day_avg)
+	hhs_capacity_ma_focal_latest <- subset(hhs_capacity_ma_focal_latest, total_icu_beds_7_day_avg>=25)
     # hhs_capacity_ma_focal_latest_pretty <- hhs_capacity_ma_focal_latest[,c(
     #     "hospital_name", 
     #     "number_unoccupied_adult_hospital_ICU_beds", 
