@@ -1,0 +1,38 @@
+---
+title: Other useful links
+output:
+  html_document:
+    includes:
+       in_header: GA_Script.html
+params:
+  sumtab: "unknown"
+---
+
+Getting masks:
+
+* https://shop.projectn95.org/
+* https://bonafidemasks.com/Powecom-kn-95/
+
+
+Microcovid scenarios
+
+10,000 microcovids is a 1% risk of getting covid per instance (per trip to the grocery store per person). This is a very rough estimate.
+
+[Grocery shopping](https://www.microcovid.org/?distance=sixFt&duration=60&interaction=oneTime&personCount=5&riskBudget=1000&riskProfile=average&scenarioName=60minShopping&setting=indoor&subLocation=US_25017&theirMask=basic&topLocation=US_25&voice=normal&yourMask=n95&yourVaccineDoses=2&yourVaccineType=pfizer)
+
+<iframe src="https://www.microcovid.org/?distance=sixFt&duration=60&interaction=oneTime&personCount=5&riskBudget=1000&riskProfile=average&scenarioName=60minShopping&setting=indoor&subLocation=US_25017&theirMask=basic&topLocation=US_25&voice=normal&yourMask=n95&yourVaccineDoses=2&yourVaccineType=pfizer" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
+
+[Plane flight](https://www.microcovid.org/?distance=sixFt&duration=360&interaction=oneTime&personCount=41&riskBudget=1000&riskProfile=average&scenarioName=planeRide&setting=plane&subLocation=US_25017&theirMask=basic&topLocation=US_25&voice=silent&yourMask=n95&yourVaccineDoses=2&yourVaccineType=pfizer)
+
+
+<iframe src="https://www.microcovid.org/?distance=sixFt&duration=360&interaction=oneTime&personCount=41&riskBudget=1000&riskProfile=average&scenarioName=planeRide&setting=plane&subLocation=US_25017&theirMask=basic&topLocation=US_25&voice=silent&yourMask=n95&yourVaccineDoses=2&yourVaccineType=pfizer" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
+
+[Eating in restaurant indoors](https://www.microcovid.org/?distance=sixFt&duration=90&interaction=oneTime&personCount=15&riskBudget=1000&riskProfile=average&scenarioName=restaurantIndoors&setting=indoor&subLocation=US_25017&theirMask=none&topLocation=US_25&voice=normal&yourMask=none&yourVaccineDoses=2&yourVaccineType=pfizer)
+
+
+<iframe src="https://www.microcovid.org/?distance=sixFt&duration=90&interaction=oneTime&personCount=15&riskBudget=1000&riskProfile=average&scenarioName=restaurantIndoors&setting=indoor&subLocation=US_25017&theirMask=none&topLocation=US_25&voice=normal&yourMask=none&yourVaccineDoses=2&yourVaccineType=pfizer" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
+
+[Eating at restaurant outdoors](https://www.microcovid.org/?distance=sixFt&duration=90&interaction=oneTime&personCount=15&riskBudget=1000&riskProfile=average&scenarioName=restaurantOutdoors&setting=outdoor&subLocation=US_25017&theirMask=none&topLocation=US_25&voice=normal&yourMask=none&yourVaccineDoses=2&yourVaccineType=pfizer)
+
+
+<iframe src="https://www.microcovid.org/?distance=sixFt&duration=90&interaction=oneTime&personCount=15&riskBudget=1000&riskProfile=average&scenarioName=restaurantOutdoors&setting=outdoor&subLocation=US_25017&theirMask=none&topLocation=US_25&voice=normal&yourMask=none&yourVaccineDoses=2&yourVaccineType=pfizer" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
