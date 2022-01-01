@@ -37,5 +37,4 @@ params:
 * [Weekly review of spread](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html)
 * [Science updates](https://www.cdc.gov/library/covid19/scienceupdates.html?Sort=Date%3A%3Adesc) (weekly review of articles and preprints)
 * [Science briefs](https://www.cdc.gov/coronavirus/2019-ncov/science/science-briefs/index.html) (reviews of particular topics)
-* [Guidance (what to do) by audience](https://www.cdc.gov/coronavirus/2019-ncov/communication/guidance.html)
-* 
+* [Guidance by audience](https://www.cdc.gov/coronavirus/2019-ncov/communication/guidance.html)
