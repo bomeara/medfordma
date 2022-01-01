@@ -8,13 +8,13 @@ params:
   sumtab: "unknown"
 ---
 
-Getting masks:
+## Getting masks:
 
 * https://shop.projectn95.org/
 * https://bonafidemasks.com/Powecom-kn-95/
 
 
-Microcovid scenarios
+## Microcovid scenarios
 
 10,000 microcovids is a 1% risk of getting covid per instance (per trip to the grocery store per person). This is a very rough estimate.
 
@@ -22,3 +22,20 @@ Microcovid scenarios
 * [Plane flight](https://www.microcovid.org/?distance=sixFt&duration=360&interaction=oneTime&personCount=41&riskBudget=1000&riskProfile=average&scenarioName=planeRide&setting=plane&subLocation=US_25017&theirMask=basic&topLocation=US_25&voice=silent&yourMask=n95&yourVaccineDoses=2&yourVaccineType=pfizer)
 * [Eating in a restaurant indoors](https://www.microcovid.org/?distance=sixFt&duration=90&interaction=oneTime&personCount=15&riskBudget=1000&riskProfile=average&scenarioName=restaurantIndoors&setting=indoor&subLocation=US_25017&theirMask=none&topLocation=US_25&voice=normal&yourMask=none&yourVaccineDoses=2&yourVaccineType=pfizer)
 * [Eating at a restaurant outdoors](https://www.microcovid.org/?distance=sixFt&duration=90&interaction=oneTime&personCount=15&riskBudget=1000&riskProfile=average&scenarioName=restaurantOutdoors&setting=outdoor&subLocation=US_25017&theirMask=none&topLocation=US_25&voice=normal&yourMask=none&yourVaccineDoses=2&yourVaccineType=pfizer)
+
+## Journalism
+(Focused on their covid coverage sections)
+
+* [Washington Post](https://www.washingtonpost.com/coronavirus/)
+* [New York Times](https://www.nytimes.com/news-event/coronavirus)
+* [Boston Globe](https://www.bostonglobe.com/nation/special-reports/coronavirus/)
+*  [Ars Technica](https://arstechnica.com/series/covid-19-coverage/)
+* [Scientific American](https://www.scientificamerican.com/tag/The+Coronavirus+Outbreak/)
+
+## CDC reports
+
+* [Weekly review of spread](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html)
+* [Science updates](https://www.cdc.gov/library/covid19/scienceupdates.html?Sort=Date%3A%3Adesc) (weekly review of articles and preprints)
+* [Science briefs](https://www.cdc.gov/coronavirus/2019-ncov/science/science-briefs/index.html) (reviews of particular topics)
+* [Guidance (what to do) by audience](https://www.cdc.gov/coronavirus/2019-ncov/communication/guidance.html)
+* 
