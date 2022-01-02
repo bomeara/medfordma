@@ -1,0 +1,19 @@
+---
+title: Comparisons
+output:
+  html_document:
+    includes:
+       in_header: GA_Script.html
+params:
+  sumtab: "unknown"
+---
+
+Comparisons to other areas with family members.
+
+<iframe src="https://covidactnow.org/embed/us/fips/25017" title="Middlesex Countty CoVid Act Now" width="350" height="370" frameBorder="0" scrolling="no" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
+
+
+<iframe src="https://covidactnow.org/embed/us/fips/28940" title="Knoxville TN Metro CoVid Act Now" width="350" height="370" frameBorder="0" scrolling="no" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
+
+
+<iframe src="https://covidactnow.org/embed/us/fips/47001" title="Anderson County TN Metro CoVid Act Now" width="350" height="370" frameBorder="0" scrolling="no" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
