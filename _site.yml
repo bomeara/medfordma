@@ -6,6 +6,8 @@ navbar:
       href: index.html
     - text: "Links"
       href: "links.html"
+    - text: "Comparisons"
+      href: "comparisons.html"
     - text: "About"
       href: about.html
 
