@@ -10,10 +10,18 @@ params:
 
 Comparisons to other areas with family members.
 
+<hr />
+
 <iframe src="https://covidactnow.org/embed/us/fips/25017" title="Middlesex Countty CoVid Act Now" width="350" height="370" frameBorder="0" scrolling="no" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
 
+<hr />
+
+<iframe src="https://covidactnow.org/embed/us/fips/25023" title="Plymouth Countty CoVid Act Now" width="350" height="370" frameBorder="0" scrolling="no" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
+
+<hr />
 
 <iframe src="https://covidactnow.org/embed/us/fips/28940" title="Knoxville TN Metro CoVid Act Now" width="350" height="370" frameBorder="0" scrolling="no" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
 
+<hr />
 
 <iframe src="https://covidactnow.org/embed/us/fips/47001" title="Anderson County TN Metro CoVid Act Now" width="350" height="370" frameBorder="0" scrolling="no" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
