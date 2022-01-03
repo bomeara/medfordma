@@ -33,7 +33,7 @@ plot_positivity <- ggplot(medford_from_state, aes(x=End_Date, y=Percent_Positivi
 print(plot_positivity)
 ```
 
-New covid cases per day in Medford (seven day average in red)
+New covid cases per day in Medford (seven day average in red) [*temporary issue in year until Medford updates its data for 2022*]
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}	
 plot_cases <- ggplot(medford_from_city, aes(x=DATE, y=`New Cases`)) + geom_line(color="darkgray") + geom_line(aes(y=zoo::rollmean(`New Cases`, 7, na.pad=TRUE, align="right")), color="red")+ theme_light() + xlab("Date") + ylab("Number of new cases per day") + ggtitle("New covid cases in Medford per day")
@@ -47,15 +47,6 @@ The US Department of Health and Human Services gives data on hospital usage. Her
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::kable(hhs_capacity_ma_focal_latest_pretty)
-```
-
-
-Plotting percentage of ICU patients with covid over time (up to the week starting `r max(hhs_capacity_ma_focal$DATE)`). Some hospitals have much more frequently updated data than others; some is fairly gappy. This just plots the hospitals that average at least 25 staffed adult ICU beds per week.
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-major_hospitals <- subset(hhs_capacity_ma_focal, total_icu_beds_7_day_avg>=25)
-try(hospital_plot <- ggplot(major_hospitals, aes(x=DATE, y=percentage_adult_hospital_inpatient_ICU_bed_occupied_of_all_inpatient_ICU_beds)) + geom_line(aes(colour=hospital_name)) + theme_light() + ylab("Percent of ICU patients witth covid") + xlab("Date") + ggtitle("Percent of ICU patients with covid at major Greater Boston hospitals") + ylim(c(50, 100)))
-print(hospital_plot)
 ```
 
 The state also releases information about conditions in all hospitals in the state:
@@ -85,4 +76,13 @@ We can also see what percentage of people who have been hospitalized for covid h
 
 covid_patients_vaxxed_plot <- ggplot(state_hospital_data[!is.na(state_hospital_data$Percentage_Hospitalized_Who_Were_Vaccinated),], aes(x=Date, y=Percentage_Hospitalized_Who_Were_Vaccinated)) + geom_line() + theme_light() + ylab("Percentage of patients") +  xlab("Date") + ggtitle("Percentage of hospitalized covid patients who were fully vaccinated in MA")
 print(covid_patients_vaxxed_plot)
+```
+
+
+Plotting percentage of ICU patients with covid over time (up to the week starting `r max(hhs_capacity_ma_focal$DATE)`). Some hospitals have much more frequently updated data than others; some is fairly gappy. This just plots the hospitals that average at least 25 staffed *adult* ICU beds per week.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+major_hospitals <- subset(hhs_capacity_ma_focal, total_staffed_adult_icu_beds_7_day_avg>=25)
+try(hospital_plot <- ggplot(major_hospitals, aes(x=DATE, y=percentage_adult_hospital_inpatient_ICU_bed_occupied_of_all_inpatient_ICU_beds)) + geom_line(aes(colour=hospital_name)) + theme_light() + ylab("Percent of ICU patients witth covid") + xlab("Date") + ggtitle("Percent of ICU patients with covid at major Greater Boston hospitals") + facet_wrap(~ hospital_name, ncol=2) + guides(colour=FALSE) + ylim(c(50, 100)))
+print(hospital_plot)
 ```
