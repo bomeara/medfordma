@@ -1,7 +1,7 @@
 library(RSelenium)
 # rvest to convert to xml for easier parsing
 library(rvest)
-try(system("open -a Docker"))
+#try(system("open -a Docker"))
 try(system("docker run -d -p 4445:4444 selenium/standalone-firefox:2.53.1"))
 # start a server and open a navigator (firefox by default)
 remDr <- remoteDriver(
