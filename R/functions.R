@@ -189,7 +189,7 @@ CreateHHSDataFocalCitiesPretty <- function(hhs_capacity_ma_focal) {
         "Hospital", 
         "ICU beds available",
 		"ICU beds total" ,
-        "Percent available"
+        "Percent occupied"
     )
 
     for (i in 2:ncol(hhs_capacity_ma_focal_latest_pretty)) {
