@@ -70,7 +70,7 @@ covid_patients_intubated_plot <- ggplot(state_hospital_data, aes(x=Date, y=Intub
 print(covid_patients_intubated_plot)
 ```
 
-We can also see what percentage of people who have been hospitalized for covid had been fully vaccinated first. Vaccination is *very, very* effective at reducing severe illness and is strongly recommended by health agencies, but just as airbags and seatbelts reduce but do not completely eliminate car deaths, there is a small risk of a breakthrough infection that can lead to hospitalization. 
+We can also see what percentage of people who have been hospitalized for covid had been fully vaccinated first. Vaccination is *very, very* effective at reducing severe illness and is strongly recommended by health agencies, but just as airbags and seatbelts reduce but do not completely eliminate car deaths, there is a small risk of a breakthrough infection that can lead to hospitalization. It is also not clear what fraction of "fully vaccinated" patients were boosted. Moreover, the fact that older people are more likely to require hospitalization and more likely to have been vaccinated will tend to make vaccination seem less effective than it is: to do a better comparison, one would have to look at hospitalization by vaccination status and age, and perhaps by other factors that may lead to worse outcomes with covid and may correlate with desire to get vaccinated in the first place.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -83,6 +83,9 @@ Plotting percentage of ICU patients with covid over time (up to the week startin
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 major_hospitals <- subset(hhs_capacity_ma_focal, total_staffed_adult_icu_beds_7_day_avg>=25)
+all_names <- table(major_hospitals$hospital_name)
+good_names <- all_names[all_names>50]
+major_hospitals <- major_hospitals[major_hospitals$hospital_name %in% names(good_names),]
 try(hospital_plot <- ggplot(major_hospitals, aes(x=DATE, y=percentage_adult_hospital_inpatient_ICU_bed_occupied_of_all_inpatient_ICU_beds)) + geom_line(aes(colour=hospital_name)) + theme_light() + ylab("Percent of ICU patients witth covid") + xlab("Date") + ggtitle("Percent of ICU patients with covid at major Greater Boston hospitals") + facet_wrap(~ hospital_name, ncol=2) + guides(colour=FALSE) + ylim(c(50, 100)))
 print(hospital_plot)
 ```
