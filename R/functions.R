@@ -34,10 +34,11 @@ GetDataFromCity <- function() {
 	input_file_html <- rvest::read_html("https://www.medfordma.org/covid-19-total-case-counts/")
 	tbl <- as.data.frame(rvest::html_table(rvest::html_nodes(input_file_html, "table"), header=1)[[1]])
 	current_year <- format(Sys.Date(), "%Y")
-	if(grepl("12-31", tbl$DATE[1])) {
-		current_year <- as.character(as.numeric(current_year) - 1)
-	}
+	
 	for (i in sequence(nrow(tbl))) {
+		if(grepl("12-31", tbl$DATE[i])) {
+			current_year <- as.character(as.numeric(current_year) - 1)
+		}
 		if(grepl('\\*', tbl[i,1])) {
 			#current_year <- as.numeric(gsub('\\*', "", tbl[i,1]))-1
 		} else {
