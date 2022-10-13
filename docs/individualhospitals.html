@@ -13,7 +13,7 @@
 
 <title>Individual Hospitals</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -189,8 +189,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -198,16 +198,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -309,45 +302,45 @@ usage. Here are data for hospitals in this area.</p>
 <tbody>
 <tr class="odd">
 <td align="left">Beth Israel Deaconess Medical Center</td>
-<td align="right">11</td>
-<td align="right">122</td>
-<td align="right">91</td>
+<td align="right">8</td>
+<td align="right">123</td>
+<td align="right">94</td>
 </tr>
 <tr class="even">
 <td align="left">Boston Children’s Hospital</td>
-<td align="right">10</td>
+<td align="right">13</td>
 <td align="right">134</td>
-<td align="right">93</td>
+<td align="right">91</td>
 </tr>
 <tr class="odd">
 <td align="left">Boston Medical Center Corporation</td>
-<td align="right">18</td>
-<td align="right">89</td>
-<td align="right">79</td>
+<td align="right">17</td>
+<td align="right">88</td>
+<td align="right">81</td>
 </tr>
 <tr class="even">
 <td align="left">Brigham And Women’s Hospital</td>
-<td align="right">14</td>
-<td align="right">162</td>
-<td align="right">91</td>
+<td align="right">13</td>
+<td align="right">156</td>
+<td align="right">92</td>
 </tr>
 <tr class="odd">
 <td align="left">Lahey Hospital &amp; Medical Center, Burlington</td>
 <td align="right">0</td>
-<td align="right">40</td>
+<td align="right">41</td>
 <td align="right">100</td>
 </tr>
 <tr class="even">
 <td align="left">Massachusetts General Hospital</td>
-<td align="right">3</td>
+<td align="right">6</td>
 <td align="right">149</td>
-<td align="right">98</td>
+<td align="right">96</td>
 </tr>
 <tr class="odd">
 <td align="left">Tufts Medical Center</td>
-<td align="right">18</td>
+<td align="right">17</td>
 <td align="right">97</td>
-<td align="right">82</td>
+<td align="right">83</td>
 </tr>
 </tbody>
 </table>
