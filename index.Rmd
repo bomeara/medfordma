@@ -19,7 +19,7 @@ Please keep my family, and yours, and yourself safe by following public health g
 source("_packages.R")
 source("R/functions.R")
 tar_load(medford_from_state)
-tar_load(medford_from_city)
+#tar_load(medford_from_city)
 tar_load(hhs_capacity_ma)
 tar_load(hhs_capacity_ma_focal)
 tar_load(hhs_capacity_ma_focal_latest_pretty)
@@ -33,12 +33,7 @@ plot_positivity <- ggplot(medford_from_state, aes(x=End_Date, y=Percent_Positivi
 print(plot_positivity)
 ```
 
-New covid cases per day in Medford (seven day average in red)
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}	
-plot_cases <- ggplot(medford_from_city, aes(x=DATE, y=`New Cases`)) + geom_line(color="darkgray") + geom_line(aes(y=zoo::rollmean(`New Cases`, 7, na.pad=TRUE, align="right")), color="red")+ theme_light() + xlab("Date") + ylab("Number of new cases per day") + ggtitle("New covid cases in Medford per day")
-print(plot_cases)
-```
 
 ### Hospital data
 
